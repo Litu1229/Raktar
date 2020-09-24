@@ -23,7 +23,12 @@ namespace Raktar
         static void Main(string[] args)
         {
             //termek t = new termek("P01", "Póló XXL", 1500, 10);
-            //Console.WriteLine($"{t.Kod}- {t.Nev}- {t.Ar}- {t.DB}";
+            //Console.WriteLine($"{t.Kod}- {t.Nev}- {t.Ar}- {t.DB}");
+             beolvasraktar();
+            foreach (var t in termekek)
+            {
+                Console.WriteLine(t.Nev);
+            }
             Console.ReadKey();
         }
     }

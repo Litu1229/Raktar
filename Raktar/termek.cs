@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Runtime.Remoting.Messaging;
 
 namespace Raktar
 {
@@ -37,14 +38,38 @@ namespace Raktar
                 set { db = value; }
             }
 
+        
+
+        public string Alakit(string szoveg)
+        {
+        string ekezetes = "áéíúüűöőó";
+        string mire = "aeiuuuooo";
+        string tmp = "";
+        //string szo = "árvíztűrőtükörfúrógép";
+            for (int i = 0; i < szoveg.Length; i++)
+            {
+                int hol = ekezetes.IndexOf(szoveg[i]);
+                if (hol > -1)
+                {
+                    tmp += mire[hol];
+                }
+                else
+                {
+                    tmp += szoveg[i];
+                }
+            }
+            //Console.WriteLine(tmp);
+            return tmp;
+         }
 
             public termek(string kod, string nev, int ar, int db)
             {
                 this.kod = kod;
-                this.nev = nev;
+                this.nev = Alakit(nev);
                 this.ar = ar;
                 this.db = db;
             }
         }
     }
+
 
