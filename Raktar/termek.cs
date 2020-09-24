@@ -9,8 +9,6 @@ namespace Raktar
 {
     class termek
     {
-        class Program
-        {
             private string kod;
 
 
@@ -49,4 +47,4 @@ namespace Raktar
             }
         }
     }
-}
+
